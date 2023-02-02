@@ -3,7 +3,7 @@ package dev.skosarev.springcourse;
 import java.util.List;
 
 public class MusicPlayer {
-    private List<Music> musicList;
+    private Music music;
     private String name;
     private int volume;
 
@@ -27,17 +27,15 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public List<Music> getMusicList() {
-        return musicList;
+    public Music getMusicList() {
+        return music;
     }
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
-    public void playMusicList() {
-        for (Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+    public void playMusic() {
+        System.out.println("Playing: " + music.getSong());
     }
 }
