@@ -1,11 +1,15 @@
 package dev.skosarev.springcourse;
 
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
     private Music music;
 
-    public MusicPlayer(Music music) {
+    @Autowired
+    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
         this.music = music;
     }
 
@@ -17,7 +21,7 @@ public class MusicPlayer {
         this.music = music;
     }
 
-    public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+    public String playMusic() {
+        return "Playing: " + music.getSong();
     }
 }
