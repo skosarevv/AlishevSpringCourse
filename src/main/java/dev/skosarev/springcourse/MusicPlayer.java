@@ -9,7 +9,7 @@ public class MusicPlayer {
     private Music music;
 
     @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
+    public MusicPlayer(@Qualifier("rockMusic") Music music) {
         this.music = music;
     }
 
